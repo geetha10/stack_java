@@ -1,0 +1,32 @@
+- [ ] Dependencies to add in pom.xml\
+
+	<dependency>
+                <groupId>org.apache.tomcat.embed</groupId>
+                <artifactId>tomcat-embed-jasper</artifactId>
+        </dependency>
+		<dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>jstl</artifactId>
+        </dependency>
+
+
+- [ ] Properties to add in application.properties
+		spring.mvc.view.prefix=/WEB-INF/
+
+- [ ] Create a new folder WEB_INF in web app folder
+
+- [ ] Importing tag lib in jsp file
+	
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+- [ ] Bootstrap dependencies
+
+	<dependency>
+	        <groupId>org.webjars</groupId>
+	        <artifactId>webjars-locator</artifactId>
+	        <version>0.30</version>
+	    </dependency>
+	    
+
+
+

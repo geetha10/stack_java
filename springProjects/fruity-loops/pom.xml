@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>jstldemo</artifactId>
+	<artifactId>fruity-loops</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
-	<name>jstldemo</name>
+	<name>fruity-loops</name>
 	<description>For this assignment we will take data from our controller and render it to show a receipt for a single item purchase. </description>
 	<properties>
 		<java.version>1.8</java.version>
@@ -64,7 +64,6 @@
 	        <artifactId>jquery</artifactId>
 	        <version>3.6.0</version>
 	    </dependency>
-			
 	</dependencies>
 
 	<build>
