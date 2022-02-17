@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Item {
     
     // MEMBER VARIABLES
@@ -7,6 +9,8 @@ public class Item {
     // CONSTRUCTOR
     //   Takes a name and price as arguments 
     //   and sets them accordingly
+
+    public Item(){}
 
     public Item(String name,double price){
         this.name=name;
@@ -29,6 +33,14 @@ public class Item {
 
     public double getPrice(){
         return price;
+    }
+
+    public static void displayMenu(ArrayList<Item> menu){
+    
+        System.out.println("");
+        for(Item item: menu){
+            System.out.println(item.getName()+ " -- $"+item.getPrice());
+        }
     }
     
 }

@@ -11,6 +11,8 @@ public class TestBarista{
         String custName=System.console().readLine();
         Order cust1= new Order(custName);
 
+        //Item menuItem=new Item();
+
         Item latte= new Item("Latte", 4.5);
         menu.add(latte);
 
@@ -24,19 +26,11 @@ public class TestBarista{
         menu.add(espresso);
 
         System.out.println("This is our menu");
-        displayMenu(menu);
+        Item.displayMenu(menu);
 
         cust1.addItem(latte);
         cust1.addItem(dripCoffe);
 
         cust1.display();
-    }
-
-    public static void displayMenu(ArrayList<Item> menu){
-    
-        System.out.println("");
-        for(Item item: menu){
-            System.out.println(item.getName()+ " -- $"+item.getPrice());
-        }
     }
 }

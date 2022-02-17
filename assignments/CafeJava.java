@@ -40,11 +40,20 @@ public class CafeJava {
             isReadyOrder3=true;
         }
         if(isReadyOrder3){
-            System.out.println(customer1 +" your order is ready.Your Total is "+  2*latte);
+            System.out.println(customer3 +" your order is ready.Your Total is "+  2*latte);
             isReadyOrder4=true;
         }
         if(isReadyOrder4){
-            System.out.println(customer1 +" your order is ready.Your Total is "+ (dripCoffee-latte));
+            System.out.println(customer4 +" your order is ready.Your Total is "+ (dripCoffee-latte));
         }
+
+        String ninja = "Welcome to Coding Dojo!";
+        int a = ninja.indexOf("Coding"); // a is 11
+        int b = ninja.indexOf("co"); // b is 3
+        int c = ninja.indexOf("pizza"); // c is -1, "pizza" is not found
+        System.out.println(a);
+        System.out.println(b);
+        System.out.println(c);
+
     }
 }

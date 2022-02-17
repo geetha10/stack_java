@@ -1,6 +1,6 @@
 - [ ] Dependencies to add in pom.xml\
 
-	<dependency>
+		<dependency>
                 <groupId>org.apache.tomcat.embed</groupId>
                 <artifactId>tomcat-embed-jasper</artifactId>
         </dependency>
@@ -8,6 +8,27 @@
                 <groupId>javax.servlet</groupId>
                 <artifactId>jstl</artifactId>
         </dependency>
+
+- [ ] Bootstrap dependencies
+
+	<dependency>
+	        <groupId>org.webjars</groupId>
+	        <artifactId>webjars-locator</artifactId>
+	        <version>0.30</version>
+	</dependency>
+
+- [ ] Spring Boot Spring Data JPA  and Java Mysql Connector dependencies
+
+	<dependency>
+	    <groupId>mysql</groupId>
+	    <artifactId>mysql-connector-java</artifactId>
+	    <scope>runtime</scope>
+	</dependency>
+	<dependency>
+	    <groupId>org.springframework.boot</groupId>
+	    <artifactId>spring-boot-starter-data-jpa</artifactId>
+	</dependency>
+	    
 
 
 - [ ] Properties to add in application.properties
@@ -19,14 +40,7 @@
 	
 	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-- [ ] Bootstrap dependencies
 
-	<dependency>
-	        <groupId>org.webjars</groupId>
-	        <artifactId>webjars-locator</artifactId>
-	        <version>0.30</version>
-	    </dependency>
-	    
 
 
 

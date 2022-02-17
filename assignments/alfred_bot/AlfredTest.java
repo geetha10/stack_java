@@ -31,5 +31,9 @@ public class AlfredTest {
         System.out.println(alexisTest);
         System.out.println(alfredTest);
         System.out.println(notRelevantTest);
+
+        int x=4;
+        Integer y=3;
+        System.out.println(x+y);
     }
 }

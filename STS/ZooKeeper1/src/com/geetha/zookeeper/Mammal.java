@@ -2,7 +2,7 @@ package com.geetha.zookeeper;
 
 public class Mammal {
 	
-	int energyLevel;
+	protected int energyLevel;
 	
 	public Mammal() {
 		this.energyLevel = 100;
