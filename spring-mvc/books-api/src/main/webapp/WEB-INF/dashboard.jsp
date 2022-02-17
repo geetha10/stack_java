@@ -17,6 +17,7 @@
 		<table class="table table-bordered table-hover  mx-auto w-auto bg-white">
 			<thead>
 				<tr>
+					<th>ID</th>
 					<th>Title</th>
 		            <th>Description</th>
 		            <th>Language</th>
@@ -26,6 +27,7 @@
 			<tbody>
 			<c:forEach var="book" items="${books}">
 	            <tr>
+	            	<td>${book.id}</td>
 	                <td> <a href="/books/${book.id}">${book.title}</a></td>
 	                <td>${book.description}</td> 
 	                <td>${book.language}</td>
@@ -34,6 +36,9 @@
 	        </c:forEach>
 	        </tbody>
         </table>
+        <p class="text-center">
+                    <a href="/books/new" class="btn btn-info btn-primary">Add New Book</a>
+                </p>
         </div>
 	</div>
 </body>
