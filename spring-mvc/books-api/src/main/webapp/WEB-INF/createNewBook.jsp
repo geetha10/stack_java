@@ -12,7 +12,7 @@
 	<title>Books API</title>
 </head>
 <body>
-	<div class="container mx-auto">
+	<div class="container mx-auto col-4">
 		<h1 class="text-center">Create a new Book</h1>
 		<form:form action="/books/new" method="post" modelAttribute="book" >
 	        <div class="form-group mx-auto">
