@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
+import org.springframework.web.bind.annotation.PutMapping;
 
 import com.example.mvcdemo.models.Expense;
 import com.example.mvcdemo.services.ExpenseService;
@@ -49,17 +49,26 @@ public class AppController {
 	}
 	
 	@GetMapping("/expense/edit/{id}")
-	public String editExpense( @ModelAttribute("expense") Expense expense, Model model, @PathVariable("id") Long id) {
-		Expense exp= expenseService.getExpenseByID(id);
-		model.addAttribute("expense", exp);
+	public String editExpense( 
+			@ModelAttribute("expense") Expense expense, 
+			Model model, 
+			@PathVariable("id") Long id) {
+		Expense expenseToEdit= expenseService.getExpenseByID(id);
+		model.addAttribute("expense", expenseToEdit);
 		return "editExpense.jsp";
 	}
 	
-	@PostMapping("/expense/update/{id}")
-	public String updateExpense(@ModelAttribute("expense") Expense expense,  @PathVariable("id") Long id) {
-		expense.setId(id);
-		expenseService.saveExpense(expense);
-		return "redirect:/expenses/dashboard";
+	@PutMapping("/expense/update/{id}")
+	public String updateExpense(
+			@Valid @ModelAttribute("expense") Expense expense, 
+			BindingResult result) {
+		if(result.hasErrors()) {
+			return "editExpense.jsp";
+		}else {
+			expenseService.updateExpense(expense);
+			return "redirect:/expenses/dashboard";
+		}
+		
 	}
 	
 	@DeleteMapping("/expense/delete/{id}")

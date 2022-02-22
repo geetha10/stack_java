@@ -37,8 +37,8 @@
 	        </tbody>
         </table>
         <p class="text-center">
-                    <a href="/books/new" class="btn btn-info btn-primary">Add New Book</a>
-                </p>
+           <a href="/books/new" class="btn btn-info btn-primary">Add New Book</a>
+        </p>
         </div>
 	</div>
 </body>
