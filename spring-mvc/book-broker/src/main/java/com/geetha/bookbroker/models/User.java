@@ -1,4 +1,4 @@
-package com.geetha.bookclub.models;
+package com.geetha.bookbroker.models;
 
 import java.util.Date;
 import java.util.List;
@@ -10,6 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 import javax.validation.constraints.Email;
@@ -18,10 +20,11 @@ import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+
 @Entity
 @Table(name="users")
 public class User {
-
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -45,9 +48,30 @@ public class User {
 	
 	@OneToMany(mappedBy="creator", fetch =FetchType.LAZY)
 	private List<Book> books;
+	
+	@OneToMany(mappedBy="borrowedby", fetch =FetchType.LAZY)
+	private List<Book> borrowedBooks;
+	
+	@Column(updatable = false)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date created_at;
+	
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	private Date updated_at;
 
 	public User() {
 		
+	}
+	
+	
+	@PrePersist
+	public void onCreate() {
+		this.created_at= new Date();
+	}
+	
+	@PreUpdate
+	public void onUpdate() {
+		this.updated_at = new Date();
 	}
 
 	public Long getId() {
@@ -70,14 +94,6 @@ public class User {
 		return email;
 	}
 
-	public List<Book> getBooks() {
-		return books;
-	}
-
-	public void setBooks(List<Book> books) {
-		this.books = books;
-	}
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
@@ -97,4 +113,14 @@ public class User {
 	public void setConfirm(String confirm) {
 		this.confirm = confirm;
 	}
+
+	public List<Book> getBooks() {
+		return books;
+	}
+
+	public void setBooks(List<Book> books) {
+		this.books = books;
+	}
+	
+	
 }
